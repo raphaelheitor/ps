@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PremierTest.Domain.Commands.Response
+namespace PremierTest.Application.Commands.Responses
 {
     public class InformarHoraResponse
     {

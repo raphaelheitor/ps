@@ -11,8 +11,6 @@ namespace PremierTest.Domain.Entities
         public string Nome { get; set; }
         public string Matricula { get; set; }
         public string Password { get; set; }
-        public Perfil Perfil { get; set; }
-        public virtual ICollection<Equipe> Equipes { get; set; }
-        public virtual ICollection<HoraTrabalhada> HorasTrabalhadas { get; set; }
+        public string Perfil { get; set; }
     }
 }

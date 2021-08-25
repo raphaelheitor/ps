@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PremierTest.Domain.Commands.Requests
+namespace PremierTest.Application.Commands.Requests
 {
     public class InformarHoraRequest
     {

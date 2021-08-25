@@ -1,10 +1,10 @@
-﻿using PremierTest.Domain.Commands.Requests;
-using PremierTest.Domain.Commands.Response;
+﻿using PremierTest.Application.Commands.Requests;
+using PremierTest.Application.Commands.Responses;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PremierTest.Domain.Handlers.Interfaces
+namespace PremierTest.Application.Handlers.Interfaces
 {
     public interface IInformarHoraHandler
     {

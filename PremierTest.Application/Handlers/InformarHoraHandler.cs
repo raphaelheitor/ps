@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PremierTest.Domain.Handlers
+namespace PremierTest.Application.Handlers
 {
     public class InformarHoraHandler
     {

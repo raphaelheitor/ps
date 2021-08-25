@@ -4,9 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using PremierTest.Domain.Handlers;
-using PremierTest.Domain.Handlers.Interfaces;
+using PremierTest.Application.Handlers;
+using PremierTest.Application.Handlers.Interfaces;
+using PremierTest.Domain.Interfaces;
 using PremierTest.Infra.Data.Context;
+using PremierTest.Infra.Data.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -26,6 +28,7 @@ namespace PremierTest.Infra.IoC
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddTransient<ILoginHandler, LoginHandler>();
+            services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
 
             var key = Encoding.ASCII.GetBytes(configuration.GetSection("SecretKey").Value);
             services.AddAuthentication(x =>
