@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.18" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PremierTest.Application\PremierTest.Application.csproj" />
+    <ProjectReference Include="..\PremierTest.Domain\PremierTest.Domain.csproj" />
+    <ProjectReference Include="..\PremierTest.Infra.Data\PremierTest.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>
