@@ -30,18 +30,28 @@ namespace PremierTest.Infra.IoC
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             string appSettingKey = configuration.GetSection("SecretKey").Value;
-            
+            //Login Handlers DI
             services.AddTransient<ILoginHandler, LoginHandler>();
+            //Equipe Handlers DI
             services.AddTransient<ICreateEquipeHandler, CreateEquipeHandler>();
             services.AddTransient<IAllEquipesHandler, AllEquipesHandler>();
             services.AddTransient<IGetEquipeHandler, GetEquipeHandler>();
             services.AddTransient<IAddFuncionarioEquipeHandler, AddFuncionarioEquipeHandler>();
             services.AddTransient<IUpdateEquipeHandler, UpdateEquipeHandler>();
-            
+            //Projeto Handlers DI
+            services.AddTransient<ICreateProjetoHandler, CreateProjetoHandler>();
+            services.AddTransient<IUpdateProjetoHandler, UpdateProjetoHandler>();
+            services.AddTransient<IAllProjetosHandler, AllProjetosHandler>();
+            services.AddTransient<IGetProjetoHandler, GetProjetoHandler>();
+            services.AddTransient<IAddEquipeAProjetoHandler, AddEquipeAProjetoHandler>();
+            services.AddTransient<IRemoveEquipeDeProjetoHandler, RemoveEquipeDeProjetoHandler>();
+            //Service DI
             services.AddScoped<ITokenService>(t => new TokenService(appSettingKey));
+            //Repository DI
             services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
             services.AddScoped<IEquipeRepository, EquipeRepository>();
             services.AddScoped<IFuncionarioEquipeRepository, FuncionarioEquipeRepository>();
+            services.AddScoped<IProjetoRepository, ProjetoRepository>();
 
             var key = Encoding.ASCII.GetBytes(appSettingKey);
             services.AddAuthentication(x =>

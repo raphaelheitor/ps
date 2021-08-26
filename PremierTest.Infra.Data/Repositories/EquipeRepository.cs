@@ -26,10 +26,14 @@ namespace PremierTest.Infra.Data.Repositories
         public Equipe Update(int Id, string Nome)
         {
             var eq = _context.Equipes.Find(Id);
-            eq.SetNome(Nome);
-            _context.Equipes.Update(eq);
-            _context.SaveChanges();
-            return eq;
+            if (eq != null)
+            {
+                eq.SetNome(Nome);
+                _context.Equipes.Update(eq);
+                _context.SaveChanges();
+                return eq;
+            }
+            return null;
         }
 
         public Equipe Get(int id)

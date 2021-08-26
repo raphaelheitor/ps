@@ -11,19 +11,19 @@ namespace PremierTest.Domain.Handlers
 {
     public class AddFuncionarioEquipeHandler : IAddFuncionarioEquipeHandler
     {
-        IGetEquipeHandler _getEquipeHandler;
         IFuncionarioEquipeRepository _funcionarioEquipeRepository;
 
-        public AddFuncionarioEquipeHandler(IFuncionarioEquipeRepository funcionarioEquipeRepository, IGetEquipeHandler getEquipeHandler)
+        public AddFuncionarioEquipeHandler(IFuncionarioEquipeRepository funcionarioEquipeRepository)
         {
             _funcionarioEquipeRepository = funcionarioEquipeRepository;
-            _getEquipeHandler = getEquipeHandler;
         }
         public AddFuncionarioEquipeResponse Handle(AddFuncionarioEquipeRequest command)
         {
-            var fe = _funcionarioEquipeRepository.Add(new FuncionarioEquipe(command.FuncionarioId, command.EquipeId));
-            if (fe != null)
+            var fe = _funcionarioEquipeRepository.Find(command.FuncionarioId, command.EquipeId);
+            if (fe == null)
             {
+                fe = _funcionarioEquipeRepository.Add(new FuncionarioEquipe(command.FuncionarioId, command.EquipeId));
+                
                 return new AddFuncionarioEquipeResponse
                 {
                     Status = "Sucesso",
@@ -33,7 +33,7 @@ namespace PremierTest.Domain.Handlers
             else
                 return new AddFuncionarioEquipeResponse
                 {
-                    Status = "Nào foi possível vincular funcionário na equipe.",
+                    Status = "Esse vínculo já existe na base de dados.",
                     FuncionarioEquipe = null
                 };
         }

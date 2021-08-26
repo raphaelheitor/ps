@@ -8,5 +8,6 @@ namespace PremierTest.Domain.Interfaces
     public interface IFuncionarioEquipeRepository
     {
         FuncionarioEquipe Add(FuncionarioEquipe fe);
+        FuncionarioEquipe Find(int FuncionarioId, int EquipeId);
     }
 }
