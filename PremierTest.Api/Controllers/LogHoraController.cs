@@ -1,12 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using PremierTest.Application.Commands.Requests;
-using PremierTest.Application.Commands.Responses;
-using PremierTest.Application.Handlers.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using PremierTest.Domain.Commands.Requests;
+using PremierTest.Domain.Commands.Responses;
+using PremierTest.Domain.Handlers.Interfaces;
 
 namespace PremierTest.Api.Controllers
 {

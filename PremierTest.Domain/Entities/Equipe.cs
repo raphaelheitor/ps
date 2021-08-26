@@ -9,7 +9,7 @@ namespace PremierTest.Domain.Entities
         public int Id { get; protected set; }
         public string Nome { get; protected set; }
         public virtual IList<FuncionarioEquipe> FuncionarioEquipe { get; protected set; }
-
+        public virtual IList<Projeto> Projetos { get; protected set; }
         public void SetNome(string nome)
         {
             this.Nome = nome;

@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PremierTest.Domain", "PremierTest.Domain\PremierTest.Domain.csproj", "{2EA81F3A-9408-40F7-85CB-6013C7F25EBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PremierTest.Application", "PremierTest.Application\PremierTest.Application.csproj", "{3317933F-B82A-474F-84AF-32993363B91A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PremierTest.Infra.Data", "PremierTest.Infra.Data\PremierTest.Infra.Data.csproj", "{A86A6549-FDF7-4787-891E-D944C0B3461B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PremierTest.Infra.IoC", "PremierTest.Infra.IoC\PremierTest.Infra.IoC.csproj", "{45967B5E-930D-45BC-821D-2192BF65804D}"
@@ -23,10 +21,6 @@ Global
 		{2EA81F3A-9408-40F7-85CB-6013C7F25EBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EA81F3A-9408-40F7-85CB-6013C7F25EBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EA81F3A-9408-40F7-85CB-6013C7F25EBC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3317933F-B82A-474F-84AF-32993363B91A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3317933F-B82A-474F-84AF-32993363B91A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3317933F-B82A-474F-84AF-32993363B91A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3317933F-B82A-474F-84AF-32993363B91A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A86A6549-FDF7-4787-891E-D944C0B3461B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A86A6549-FDF7-4787-891E-D944C0B3461B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A86A6549-FDF7-4787-891E-D944C0B3461B}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -18,7 +18,7 @@ namespace PremierTest.Infra.Data.EntityConfiguration
                 .HasForeignKey(fe => fe.FuncionarioId);
 
 
-            builder.HasOne<Equipe>(fe => fe.Equipe)
+            builder.HasOne(fe => fe.Equipe)
                 .WithMany(e => e.FuncionarioEquipe)
                 .HasForeignKey(fe => fe.EquipeId);
         }

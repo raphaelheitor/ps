@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PremierTest.Application.Queries.Requests;
-using PremierTest.Application.Queries.Responses;
-using PremierTest.Application.Handlers.Interfaces;
+using PremierTest.Domain.Queries.Requests;
+using PremierTest.Domain.Queries.Responses;
+using PremierTest.Domain.Handlers.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

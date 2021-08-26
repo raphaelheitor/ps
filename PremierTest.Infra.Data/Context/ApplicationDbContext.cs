@@ -18,6 +18,8 @@ namespace PremierTest.Infra.Data.Context
         public DbSet<Funcionario> Funcionarios { get; set; }
         public DbSet<Equipe> Equipes { get; set; }
         public DbSet<FuncionarioEquipe> FuncionarioEquipes { get; set; }
+        public DbSet<Projeto> Projetos { get; set; }
+        public DbSet<HoraTrabalhada> HoraTrabalhadas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -25,6 +27,8 @@ namespace PremierTest.Infra.Data.Context
             builder.ApplyConfiguration(new FuncionarioConfiguration());
             builder.ApplyConfiguration(new EquipeConfiguration());
             builder.ApplyConfiguration(new FuncionarioEquipeConfiguration());
+            builder.ApplyConfiguration(new ProjetoConfiguration());
+            builder.ApplyConfiguration(new HoraTrabalhadaConfiguration());
         }
     }
 }
