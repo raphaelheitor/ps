@@ -4,15 +4,23 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
+using PremierTest.Application.Services.Interfaces;
 
 namespace PremierTest.Application.Services
 {
-    public static class TokenService
+    public class TokenService : ITokenService
     {
-        public static string GenerateToken(Funcionario funcionario)
+        private string _key;
+
+        public TokenService(string key)
+        {
+            _key = key;
+        }
+        
+        public string GenerateToken(Funcionario funcionario)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes("Pr3m13rS0ftT3stPr0j3ct");
+            var key = Encoding.ASCII.GetBytes(_key);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]

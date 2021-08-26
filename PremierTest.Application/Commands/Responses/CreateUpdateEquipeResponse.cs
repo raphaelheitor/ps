@@ -2,10 +2,10 @@
 
 namespace PremierTest.Application.Commands.Responses
 {
-    public class InformarHoraResponse
+    public class CreateUpdateEquipeResponse
     {
         public int Id { get; set; }
         public string Status { get; set; }
-        public HoraTrabalhada HoraTrabalhada { get; set; }
+        public Equipe Equipe { get; set; }
     }
 }

@@ -1,5 +1,4 @@
-﻿using PremierTest.Domain.Entities.Enum;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,5 +11,7 @@ namespace PremierTest.Domain.Entities
         public string Matricula { get; set; }
         public string Password { get; set; }
         public string Perfil { get; set; }
+
+        public virtual IList<FuncionarioEquipe> FuncionarioEquipe { get; set; }
     }
 }

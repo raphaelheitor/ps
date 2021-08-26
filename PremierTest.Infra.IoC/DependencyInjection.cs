@@ -6,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using PremierTest.Application.Handlers;
 using PremierTest.Application.Handlers.Interfaces;
+using PremierTest.Application.Services;
+using PremierTest.Application.Services.Interfaces;
 using PremierTest.Domain.Interfaces;
 using PremierTest.Infra.Data.Context;
 using PremierTest.Infra.Data.Repositories;
@@ -27,10 +29,21 @@ namespace PremierTest.Infra.IoC
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            string appSettingKey = configuration.GetSection("SecretKey").Value;
+            
             services.AddTransient<ILoginHandler, LoginHandler>();
+            services.AddTransient<ICreateEquipeHandler, CreateEquipeHandler>();
+            services.AddTransient<IAllEquipesHandler, AllEquipesHandler>();
+            services.AddTransient<IGetEquipeHandler, GetEquipeHandler>();
+            services.AddTransient<IAddFuncionarioEquipeHandler, AddFuncionarioEquipeHandler>();
+            services.AddTransient<IUpdateEquipeHandler, UpdateEquipeHandler>();
+            
+            services.AddScoped<ITokenService>(t => new TokenService(appSettingKey));
             services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
+            services.AddScoped<IEquipeRepository, EquipeRepository>();
+            services.AddScoped<IFuncionarioEquipeRepository, FuncionarioEquipeRepository>();
 
-            var key = Encoding.ASCII.GetBytes(configuration.GetSection("SecretKey").Value);
+            var key = Encoding.ASCII.GetBytes(appSettingKey);
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

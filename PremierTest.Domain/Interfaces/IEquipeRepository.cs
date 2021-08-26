@@ -1,14 +1,22 @@
 ﻿using PremierTest.Domain.Entities;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace PremierTest.Domain.Interfaces
 {
     public interface IEquipeRepository
     {
-        IEnumerable<Equipe> GetEquipes();
-        Equipe Get(int id);
+        /// <summary>
+        /// Commands
+        /// </summary>
+        /// <returns></returns>
+        Equipe Add(Equipe funcionario);
+        Equipe Update(int Id, string Nome);
 
+        /// <summary>
+        /// Queries
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<Equipe> GetAll();
+        Equipe Get(int id);
     }
 }

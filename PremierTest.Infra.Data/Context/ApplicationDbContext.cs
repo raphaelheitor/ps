@@ -16,11 +16,15 @@ namespace PremierTest.Infra.Data.Context
         }
 
         public DbSet<Funcionario> Funcionarios { get; set; }
+        public DbSet<Equipe> Equipes { get; set; }
+        public DbSet<FuncionarioEquipe> FuncionarioEquipes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
             builder.ApplyConfiguration(new FuncionarioConfiguration());
+            builder.ApplyConfiguration(new EquipeConfiguration());
+            builder.ApplyConfiguration(new FuncionarioEquipeConfiguration());
         }
     }
 }

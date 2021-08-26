@@ -23,19 +23,5 @@ namespace PremierTest.Api.Controllers
         {
             return handler.Handle(command);
         }
-        [HttpGet]
-        [Route("teste")]
-        [AllowAnonymous]
-        public string Teste()
-        {
-            return "funfou";
-        }
-        [HttpGet]
-        [Route("teste/auth")]
-        [Authorize]
-        public string TesteAuth()
-        {
-            return "somente logado entra aqui, bem-vindo: "+User.Identity.Name;
-        }
     }
 }

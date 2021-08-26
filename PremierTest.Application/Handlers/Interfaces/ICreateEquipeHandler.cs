@@ -3,8 +3,8 @@ using PremierTest.Application.Commands.Responses;
 
 namespace PremierTest.Application.Handlers.Interfaces
 {
-    public interface IInformarHoraHandler
+    public interface ICreateEquipeHandler
     {
-        InformarHoraResponse Handle(InformarHoraRequest request);
+        CreateUpdateEquipeResponse Handle(CreateEquipeRequest request);
     }
 }

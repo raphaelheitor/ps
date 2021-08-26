@@ -1,21 +1,22 @@
 ﻿using PremierTest.Application.Queries.Requests;
 using PremierTest.Application.Queries.Responses;
 using PremierTest.Application.Handlers.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using PremierTest.Domain.Interfaces;
 using PremierTest.Application.Services;
+using PremierTest.Application.Services.Interfaces;
 
 namespace PremierTest.Application.Handlers
 {
     public class LoginHandler : ILoginHandler
     {
         IFuncionarioRepository _funcionarioRepository;
+        ITokenService _tokenService;
 
-        public LoginHandler(IFuncionarioRepository funcionarioRepository)
+
+        public LoginHandler(IFuncionarioRepository funcionarioRepository, ITokenService tokenService)
         {
             _funcionarioRepository = funcionarioRepository;
+            _tokenService = tokenService;
         }
         public LoginResponse Handle(LoginRequest request)
         {
@@ -23,7 +24,7 @@ namespace PremierTest.Application.Handlers
             var func = _funcionarioRepository.Login(request.Matricula, pwHash);
             if (func != null)
             {
-                var token = TokenService.GenerateToken(func);
+                var token = _tokenService.GenerateToken(func);
                 return new LoginResponse
                 {
                     Status = "Login Realizado",

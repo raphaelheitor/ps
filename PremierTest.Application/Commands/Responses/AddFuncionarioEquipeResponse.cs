@@ -1,11 +1,11 @@
 ﻿using PremierTest.Domain.Entities;
 
+
 namespace PremierTest.Application.Commands.Responses
 {
-    public class InformarHoraResponse
+    public class AddFuncionarioEquipeResponse
     {
-        public int Id { get; set; }
         public string Status { get; set; }
-        public HoraTrabalhada HoraTrabalhada { get; set; }
+        public FuncionarioEquipe FuncionarioEquipe { get; set; }
     }
 }

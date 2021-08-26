@@ -3,8 +3,8 @@ using PremierTest.Application.Queries.Responses;
 
 namespace PremierTest.Application.Handlers.Interfaces
 {
-    public interface ILoginHandler
+    public interface IGetEquipeHandler
     {
-        LoginResponse Handle(LoginRequest request);
+        GetEquipeResponse Handle(GetEquipeRequest command);
     }
 }
