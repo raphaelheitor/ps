@@ -6,16 +6,16 @@ namespace PremierTest.Domain.Entities
 {
     public class Equipe
     {
-        public int Id { get; protected set; }
-        public string Nome { get; protected set; }
-        public virtual IList<FuncionarioEquipe> FuncionarioEquipe { get; protected set; }
-        public virtual IList<Projeto> Projetos { get; protected set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public virtual IList<FuncionarioEquipe> FuncionarioEquipe { get; set; }
+        public virtual IList<Projeto> Projetos { get; set; }
         public void SetNome(string nome)
         {
             this.Nome = nome;
         }
 
-        protected Equipe() { }
+        public Equipe() { }
         public Equipe (string nome)
         {
             Nome = nome;

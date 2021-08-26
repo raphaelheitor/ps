@@ -16,7 +16,7 @@ namespace PremierTest.Domain.Entities
             this.Nome = nome;
         }
 
-        protected Projeto() { }
+        public Projeto() { }
         public Projeto(string nome)
         {
             Nome = nome;

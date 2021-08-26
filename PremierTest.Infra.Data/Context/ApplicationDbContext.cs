@@ -29,6 +29,41 @@ namespace PremierTest.Infra.Data.Context
             builder.ApplyConfiguration(new FuncionarioEquipeConfiguration());
             builder.ApplyConfiguration(new ProjetoConfiguration());
             builder.ApplyConfiguration(new HoraTrabalhadaConfiguration());
+
+            builder.Entity<Funcionario>().HasData(new Funcionario
+            {
+                Id = 1,
+                Nome = "Spider Man",
+                Matricula = "12345",
+                Password = "b7e94be513e96e8c45cd23d162275e5a12ebde9100a425c4ebcdd7fa4dcd897c", //pw = senha
+                Perfil = "colaborador"
+            }, new Funcionario
+            {
+                Id = 2,
+                Nome = "Doctor Strange",
+                Matricula = "54321",
+                Password = "b7e94be513e96e8c45cd23d162275e5a12ebde9100a425c4ebcdd7fa4dcd897c", //pw = senha
+                Perfil = "colaborador"
+            }, new Funcionario
+            {
+                Id = 3,
+                Nome = "Ironman",
+                Matricula = "111",
+                Password = "b7e94be513e96e8c45cd23d162275e5a12ebde9100a425c4ebcdd7fa4dcd897c", //pw = senha
+                Perfil = "gestor"
+            });
+
+            builder.Entity<Equipe>().HasData(new Equipe()
+            {
+                Id = 1,
+                Nome = "Avengers"
+            });
+
+            builder.Entity<Projeto>().HasData(new Projeto
+            {
+                Id = 1,
+                Nome = "Infinite War"
+            });
         }
     }
 }
