@@ -20,5 +20,6 @@ namespace PremierTest.Domain.Interfaces
         /// <returns></returns>
         IEnumerable<Projeto> GetAll();
         Projeto Get(int id);
+        Projeto GetWithList(int id);
     }
 }

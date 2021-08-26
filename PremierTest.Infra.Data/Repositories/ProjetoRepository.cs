@@ -50,12 +50,17 @@ namespace PremierTest.Infra.Data.Repositories
 
         public Projeto Get(int id)
         {
-            return _context.Projetos.Include(e => e.Equipe).FirstOrDefault(e => e.Id == id);
+            return _context.Projetos.Include(p => p.Equipe).FirstOrDefault(p => p.Id == id);
         }
 
         public IEnumerable<Projeto> GetAll()
         {
             return _context.Projetos;
+        }
+
+        public Projeto GetWithList(int id)
+        {
+            return _context.Projetos.Include(p => p.HorasTrabalhadas).FirstOrDefault(p => p.Id == id);
         }
     }
 }

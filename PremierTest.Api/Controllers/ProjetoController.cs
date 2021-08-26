@@ -80,5 +80,16 @@ namespace PremierTest.Api.Controllers
         {
             return handler.Handle(command);
         }
+
+        [HttpGet]
+        [Route("horas/{ProjetoId}")]
+        [Authorize(Roles = "gestor")]
+        public GetHorasProjetoResponse Horas(
+            [FromServices] IGetHorasProjetoHandler handler,
+            [FromRoute] GetHorasProjetoRequest command
+            )
+        {
+            return handler.Handle(command);
+        }
     }
 }

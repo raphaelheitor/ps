@@ -1,4 +1,5 @@
-﻿using PremierTest.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using PremierTest.Domain.Entities;
 using PremierTest.Domain.Interfaces;
 using PremierTest.Infra.Data.Context;
 using System;
@@ -18,7 +19,7 @@ namespace PremierTest.Infra.Data.Repositories
         }
         public Funcionario Get(int id)
         {
-           return _context.Funcionarios.Find(id);
+            return _context.Funcionarios.Include(f => f.FuncionarioEquipe).Where(f => f.Id == id).FirstOrDefault();
         }
 
         public Funcionario Login(string matricula, string password)

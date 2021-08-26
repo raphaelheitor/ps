@@ -10,8 +10,8 @@ namespace PremierTest.Api.Controllers
     [Route("v1/log-hora")]
     public class LogHoraController : ControllerBase
     {
-        [HttpGet]
-        [Route("teste/auth")]
+        [HttpPost]
+        [Route("registar")]
         [Authorize]
         public InformarHoraResponse Registrar(
             [FromServices] IInformarHoraHandler handler,

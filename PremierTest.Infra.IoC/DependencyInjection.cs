@@ -32,6 +32,8 @@ namespace PremierTest.Infra.IoC
             string appSettingKey = configuration.GetSection("SecretKey").Value;
             //Login Handlers DI
             services.AddTransient<ILoginHandler, LoginHandler>();
+            //Funcionario Handlers DI
+            services.AddTransient<IGetFuncionarioHandler, GetFuncionarioHandler>();
             //Equipe Handlers DI
             services.AddTransient<ICreateEquipeHandler, CreateEquipeHandler>();
             services.AddTransient<IAllEquipesHandler, AllEquipesHandler>();
@@ -45,6 +47,9 @@ namespace PremierTest.Infra.IoC
             services.AddTransient<IGetProjetoHandler, GetProjetoHandler>();
             services.AddTransient<IAddEquipeAProjetoHandler, AddEquipeAProjetoHandler>();
             services.AddTransient<IRemoveEquipeDeProjetoHandler, RemoveEquipeDeProjetoHandler>();
+            services.AddTransient<IGetHorasProjetoHandler, GetHorasProjetoHandler>();
+            //HoraTrabalhada Handlers DI
+            services.AddTransient<IInformarHoraHandler, InformarHoraHandler>();
             //Service DI
             services.AddScoped<ITokenService>(t => new TokenService(appSettingKey));
             //Repository DI
@@ -52,6 +57,7 @@ namespace PremierTest.Infra.IoC
             services.AddScoped<IEquipeRepository, EquipeRepository>();
             services.AddScoped<IFuncionarioEquipeRepository, FuncionarioEquipeRepository>();
             services.AddScoped<IProjetoRepository, ProjetoRepository>();
+            services.AddScoped<IHoraTrabalhadaRepository, HoraTrabalhadaRepository>();
 
             var key = Encoding.ASCII.GetBytes(appSettingKey);
             services.AddAuthentication(x =>

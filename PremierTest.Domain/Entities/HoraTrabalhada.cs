@@ -12,5 +12,13 @@ namespace PremierTest.Domain.Entities
         public decimal Horas { get; set; }
         public Funcionario Colaborador { get; set; }
         public Projeto Projeto { get; set; }
+        protected HoraTrabalhada() { }
+        
+        public HoraTrabalhada(int funcionarioId, int projetoId, decimal horas)
+        {
+            ProjetoId = projetoId;
+            FuncionarioId = funcionarioId;
+            Horas = horas;
+        }
     }
 }
